@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Whose Turn Is It?</title>
+  <style>
+    body { font-family: Arial; text-align: center; margin-top: 100px; }
+    h1 { font-size: 3em; }
+  </style>
+</head>
+<body>
+  <h1 id="nameDisplay">Loading...</h1>
+
+  <script>
+    const names = ['uri', 'dana', 'bezalel', 'stas', 'nicole'];
+
+    // Reference start date - first Monday or any chosen day
+    const startDate = new Date("2024-01-01T00:00:00");  // adjust as needed
+    const now = new Date();
+
+    // Milliseconds in one week
+    const msPerWeek = 7 * 24 * 60 * 60 * 1000;
+
+    // Number of weeks since the start
+    const weeksElapsed = Math.floor((now - startDate) / msPerWeek);
+
+    // Determine current person
+    const currentIndex = weeksElapsed % names.length;
+    const currentName = names[currentIndex];
+
+    document.getElementById("nameDisplay").innerText = "Current name = " + currentName;
+  </script>
+</body>
+</html>
