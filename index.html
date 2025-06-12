@@ -16,7 +16,6 @@
     // Reference start date - first Monday or any chosen day
     const startDate = new Date("2025-06-08T00:00:00");  // adjust as needed
     const now = new Date();
-    const formattedDate = now.toISOString().slice(0, 10);
 
     // Milliseconds in one week
     const msPerWeek = 7 * 24 * 60 * 60 * 1000;
@@ -27,8 +26,9 @@
     // Determine current person
     const currentIndex = weeksElapsed % names.length;
     const currentName = names[currentIndex];
-
-    document.getElementById("nameDisplay").innerText = "Week of: "+formattedDate +"Hey " + currentName+" its your turn to clean!";
+    
+    const formattedDate = now.toISOString().slice(0, 10);
+    document.getElementById("nameDisplay").innerText = "Week of "+formattedDate +": Hey " + currentName+" its your turn to clean!";
   </script>
 </body>
 </html>
